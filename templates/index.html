@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Experiment Tracker{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <h2><i class="fas fa-chart-line"></i> Dashboard Overview</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="card stat-card">
+            <div class="icon"><i class="fas fa-users"></i></div>
+            <div class="number">{{ stats.participants }}</div>
+            <div class="label">Total Participants</div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card stat-card">
+            <div class="icon"><i class="fas fa-tasks"></i></div>
+            <div class="number">{{ stats.tasks }}</div>
+            <div class="label">Total Tasks</div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card stat-card">
+            <div class="icon"><i class="fas fa-clipboard-list"></i></div>
+            <div class="number">{{ stats.assignments }}</div>
+            <div class="label">Total Assignments</div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card stat-card">
+            <div class="icon"><i class="fas fa-check-circle"></i></div>
+            <div class="number">{{ stats.completed }}</div>
+            <div class="label">Completed Tasks</div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="fas fa-rocket"></i> Quick Actions</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <a href="{{ url_for('participants') }}" class="btn btn-primary w-100 py-3">
+                            <i class="fas fa-user-plus"></i> Add Participant
+                        </a>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <a href="{{ url_for('tasks') }}" class="btn btn-primary w-100 py-3">
+                            <i class="fas fa-plus-circle"></i> Create Task
+                        </a>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <a href="{{ url_for('assignments') }}" class="btn btn-primary w-100 py-3">
+                            <i class="fas fa-link"></i> Assign Task
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
